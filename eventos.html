@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title> Eventos </title>
+</head>
+<body>
+    <input type="text" onkeypress="apertoutecla(event)" id="entrada">
+    <button id="botao" onclick="clicar()">OK</button>
+
+    <div id="box1" onmouseleave="diminuirDiv()" onmouseenter="aumentarDiv()" style="height: 50px; width: 50px; background-color: red; margin-top: 20px;"></div>
+    <div id="box2" onmouseleave="voltarCor()" onmouseenter="mudarCor()" style="height: 50px; width: 50px; background-color: blue; margin-top: 20px;"></div>
+
+    <script>
+        function clicar(){
+            alert('TESTE')
+        }
+        function apertoutecla(event){
+            console.log(event.key)
+            if (event.key == "j")
+                alert("Exemplo Prof. Josino")
+        }
+        function aumentarDiv(){
+            let caixa = document.getElementById('box1')
+            caixa.style.height = '100px'
+            caixa.style.width = '100px'
+        }
+        function diminuirDiv(){
+            let caixa = document.getElementById('box1')
+            caixa.style.height = '50px'
+            caixa.style.width = '50px'
+        }
+        function mudarCor(){
+            let caixa = document.getElementById('box2')
+            caixa.style.backgroundColor = 'purple'
+            caixa.style.height = '100px'
+            caixa.style.width = '100px'
+        }
+        function voltarCor(){
+            let caixa = document.getElementById('box2')
+            caixa.style.backgroundColor = 'blue'
+            caixa.style.height = '50px'
+            caixa.style.width = '50px'
+        }
+    </script>
+</body>
+</html>

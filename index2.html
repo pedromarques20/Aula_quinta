@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="buscarDados()">OK</button>
+    <ul id="pokemons">
+
+    </ul>
+    <script>
+        function buscarDados(){
+            fetch('https://pokeapi.co/api/v2/pokemon')
+            .then(function(response){
+                return response.json()
+            })
+            .then(function(response){
+                let lista = ''
+                let pokemons = response.results
+                for (const pokemon of pokemons){
+                    lista += '<li>' + pokemon.name + '</li>'
+                }
+                let ul = document.getElementById("pokemons")
+                ul.innerHTML = lista
+            })
+        }
+    </script>
+</body>
+</html>
